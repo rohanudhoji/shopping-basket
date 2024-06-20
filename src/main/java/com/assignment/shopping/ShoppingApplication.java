@@ -64,11 +64,12 @@ public class ShoppingApplication {
 
     /**
      * remove invalid items from List.
+     *
      * @param basket
      * @return
      */
     private static List<String> removeInvalidItems(List<String> basket) {
-        List<Fruit> fruitList = Arrays.asList(Fruit.values());
+        List<Item> fruitList = Arrays.asList(Item.values());
         return basket.stream().filter(item ->
                 (fruitList.stream().filter(fruit -> fruit.getText().equals(item)))
                         .count() > 0).collect(Collectors.toList());
@@ -92,10 +93,10 @@ public class ShoppingApplication {
     private static Map<String, PriceCalculationStrategy> getPricingStrategies() {
         Map<String, PriceCalculationStrategy> pricingStrategies = new HashMap<>();
         // For New Item new pricingStrategies can be added.
-        pricingStrategies.put(Fruit.APPLE.getText(), count -> count * APPLE_PRICE);
-        pricingStrategies.put(Fruit.BANANA.getText(), count -> count * BANANA_PRICE);
-        pricingStrategies.put(Fruit.MELON.getText(), count -> (count / 2 + count % 2) * MELON_PRICE);
-        pricingStrategies.put(Fruit.LIME.getText(), count -> (count / 3 * 2 + count % 3) * LIME_PRICE);
+        pricingStrategies.put(Item.APPLE.getText(), count -> count * APPLE_PRICE);
+        pricingStrategies.put(Item.BANANA.getText(), count -> count * BANANA_PRICE);
+        pricingStrategies.put(Item.MELON.getText(), count -> (count / 2 + count % 2) * MELON_PRICE);
+        pricingStrategies.put(Item.LIME.getText(), count -> (count / 3 * 2 + count % 3) * LIME_PRICE);
 
         return pricingStrategies;
     }

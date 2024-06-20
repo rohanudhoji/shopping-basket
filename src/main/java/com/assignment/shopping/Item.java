@@ -1,6 +1,6 @@
 package com.assignment.shopping;
 
-public enum Fruit {
+public enum Item {
     APPLE("Apple"),
     BANANA("Banana"),
     MELON("Melon"),
@@ -8,7 +8,7 @@ public enum Fruit {
 
     public final String label;
 
-    private Fruit(String label) {
+    private Item(String label) {
         this.label = label;
     }
 

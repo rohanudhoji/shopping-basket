@@ -1,6 +1,6 @@
 package com.assignment.shopping.test;
 
-import com.assignment.shopping.Fruit;
+import com.assignment.shopping.Item;
 import com.assignment.shopping.ShoppingApplication;
 import org.junit.jupiter.api.Test;
 
@@ -32,7 +32,7 @@ public class ShoppingApplicationTest {
     @Test
     void testCalculateTotalCost_InvalidBasket() {
         List<String> basket = Arrays.asList(
-                Fruit.APPLE.getText(), null, Fruit.BANANA.getText());
+                Item.APPLE.getText(), null, Item.BANANA.getText());
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             ShoppingApplication.calculateTotalCost(basket);
         });
